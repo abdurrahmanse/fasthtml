@@ -1,0 +1,4 @@
+[2m$ /usr/bin/python3 -m py_compile app/main.py[22m
+[41m[31m[[39m[49m[41m[30mELIFECYCLE[39m[49m[41m[31m][39m[49m [31mCommand failed.[39m
+[K[0J[43m[33m[[39m[49m[43m[30mWARN[39m[49m[43m[33m][39m[49m  Local package.json exists, but node_modules missing, did you mean to install?[0K
+[0K[K[0J

@@ -1,0 +1,1 @@
+[2m$ /usr/bin/python3 -m py_compile app/main.py && mkdir -p build && cp -R app build/[22m

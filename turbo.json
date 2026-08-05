@@ -12,7 +12,9 @@
             "outputs": [
                 ".next/**",
                 "dist/**",
-                "build/**"
+                "build/**",
+                "app/__pycache__/**",
+                "app/**/*.pyc"
             ]
         },
         "lint": {}
