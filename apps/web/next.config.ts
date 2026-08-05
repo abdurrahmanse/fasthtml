@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  transpilePackages: [
+    "@portfolio/config",
+    "@portfolio/schemas",
+    "@portfolio/types",
+    "@portfolio/ui",
+    "@portfolio/utils"
+  ]
 };
 
 export default nextConfig;

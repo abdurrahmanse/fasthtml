@@ -14,6 +14,21 @@ importers:
 
   apps/admin:
     dependencies:
+      '@portfolio/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@portfolio/schemas':
+        specifier: workspace:*
+        version: link:../../packages/schemas
+      '@portfolio/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@portfolio/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       next:
         specifier: 16.3.0
         version: 16.3.0(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -53,6 +68,21 @@ importers:
 
   apps/web:
     dependencies:
+      '@portfolio/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@portfolio/schemas':
+        specifier: workspace:*
+        version: link:../../packages/schemas
+      '@portfolio/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@portfolio/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       next:
         specifier: 16.3.0
         version: 16.3.0(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
