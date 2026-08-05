@@ -9,5 +9,8 @@
   },
   "scripts": {
     "lint": "eslint src/"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
   }
 }

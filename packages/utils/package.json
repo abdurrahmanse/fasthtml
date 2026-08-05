@@ -9,5 +9,9 @@
   },
   "scripts": {
     "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.101.4",
+    "axios": "^1.19.0"
   }
 }
