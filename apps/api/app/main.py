@@ -6,4 +6,4 @@ app = FastAPI(title="Portfolio API")
 
 @app.get("/health")
 def health() -> dict[str, str]:
-	return {"status": "ok"}
+    return {"status": "ok"}

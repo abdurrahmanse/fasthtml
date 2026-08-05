@@ -1,12 +1,13 @@
 {
-	"name": "portfolio-monorepo",
-	"private": true,
-	"scripts": {
-		"dev": "turbo run dev --parallel",
-		"build": "turbo run build",
-		"lint": "turbo run lint"
-	},
-	"devDependencies": {
-		"turbo": "^2.5.8"
-	}
+    "name": "portfolio-monorepo",
+    "private": true,
+    "packageManager": "pnpm@11.12.0",
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "lint": "turbo run lint"
+    },
+    "devDependencies": {
+        "turbo": "^2.5.8"
+    }
 }
