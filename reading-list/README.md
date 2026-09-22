@@ -1,6 +1,6 @@
 # Reading List
 
-A small FastHTML app for collecting books and articles worth reading. It uses SQLite for persistence and htmx for small partial updates without a frontend build step.
+A small FastHTML app for collecting books and articles worth reading. It uses SQLite for persistence and htmx for partial updates without a frontend build step.
 
 ## Run locally
 
@@ -34,8 +34,8 @@ reading-list/
 ## Responsibility boundaries
 
 - **Routes** coordinate web requests and delegate work.
-- **Services** validate user input and enforce business rules.
+- **Services** validate input and enforce business rules.
 - **Repository** reads and writes books; it does not render HTML.
-- **Components** render reusable FastHTML fragments; they do not write to the database.
+- **Components** render FastHTML fragments; they do not write to the database.
 - **Database** owns the app connection and table schema.
 - **Main** starts the server and owns page-level styling.
