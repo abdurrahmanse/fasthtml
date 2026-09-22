@@ -1,4 +1,4 @@
-from fasthtml.common import A, Article, Body, Div, Footer, Head, Header, Html, Main, P, Section, Titled, Title, Ul
+from fasthtml.common import A, Body, Div, Footer, Head, Header, Html, Main, P, Section, Span, Titled, Title
 
 from .components import book_card, book_form
 from .database import app, rt
@@ -9,39 +9,84 @@ from .services import normalize_book
 @rt("/")
 def index():
     saved_books = list_books()
+    total_books = len(saved_books)
+    reading_count = sum(1 for book in saved_books if book.status == "reading")
+    finished_count = sum(1 for book in saved_books if book.status == "finished")
+    unread_count = total_books - reading_count - finished_count
+
     return Html(
         Head(Title("Reading List")),
         Body(
             Header(
                 Div(
-                    P("PERSONAL LIBRARY", cls="eyebrow"),
-                    Titled("Reading List", "Collect good ideas. Keep them moving."),
-                    cls="intro",
-                ),
-                cls="site-header",
+                    Div(
+                        P("PERSONAL LIBRARY", cls="eyebrow"),
+                        A("Refresh", href="/", cls="topbar-link"),
+                        cls="topbar",
+                    ),
+                    Div(
+                        Titled("Reading List", "Collect good ideas. Keep them moving."),
+                        Div(
+                            Span("All books", cls="pill"),
+                            Span(f"{total_books} total", cls="pill muted"),
+                            cls="header-pills",
+                        ),
+                        cls="intro",
+                    ),
+                    cls="site-header",
+                )
             ),
             Main(
-                Section(
-                    P("Add a title", cls="section-label"),
-                    book_form(),
-                    cls="add-panel",
-                ),
-                Section(
+                Div(
                     Div(
                         Div(
-                            P("Your collection", cls="section-label"),
-                            P(f"{len(saved_books)} titles", cls="book-count"),
-                            cls="section-heading",
+                            P("Books", cls="stat-label"),
+                            P(str(total_books), cls="stat-value"),
+                            cls="stat-card",
                         ),
-                        A("Refresh", href="/", cls="refresh-link"),
-                        cls="collection-header",
+                        Div(
+                            P("Reading", cls="stat-label"),
+                            P(str(reading_count), cls="stat-value"),
+                            cls="stat-card accent",
+                        ),
+                        Div(
+                            P("Finished", cls="stat-label"),
+                            P(str(finished_count), cls="stat-value"),
+                            cls="stat-card success",
+                        ),
+                        Div(
+                            P("Unread", cls="stat-label"),
+                            P(str(unread_count), cls="stat-value"),
+                            cls="stat-card subtle",
+                        ),
+                        cls="stats-grid",
                     ),
-                    Div(*[book_card(book) for book in saved_books], id="book-list", cls="book-list"),
-                    cls="collection-panel",
+                    Div(
+                        Section(
+                            P("Add a title", cls="section-label"),
+                            book_form(),
+                            cls="add-panel",
+                        ),
+                        Section(
+                            Div(
+                                Div(
+                                    P("Your collection", cls="section-label"),
+                                    P(f"{total_books} titles", cls="book-count"),
+                                    cls="section-heading",
+                                ),
+                                A("Refresh", href="/", cls="refresh-link"),
+                                cls="collection-header",
+                            ),
+                            Div(*[book_card(book) for book in saved_books], id="book-list", cls="book-list"),
+                            cls="collection-panel",
+                        ),
+                        cls="content-grid",
+                    ),
+                    cls="dashboard-shell",
                 ),
-                cls="content-grid",
+                cls="main-shell",
             ),
-            Footer(P("A quiet place for the next thing worth reading.")),
+            Footer(P("A quiet place for the next thing worth reading."), cls="site-footer"),
             cls="page-shell",
         ),
     )
