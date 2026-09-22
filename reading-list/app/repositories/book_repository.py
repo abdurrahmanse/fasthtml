@@ -1,5 +1,4 @@
-from .database import Book, books
-
+from app.core.database import Book, books
 
 def list_books():
     """Return saved books with unread items first and newest items first."""

@@ -6,9 +6,8 @@ import time
 
 from fasthtml.common import Style, serve
 
-from app.database import app
+from app.core.database import app
 from app import routes as _routes
-
 DEFAULT_PORT = 5001
 
 
@@ -65,4 +64,4 @@ def kill_processes_on_port(port: int) -> None:
 
 if __name__ == "__main__":
     kill_processes_on_port(DEFAULT_PORT)
-    serve(appname="app.database", app="app", port=DEFAULT_PORT)
+    serve(appname="main", app="app", port=DEFAULT_PORT)
