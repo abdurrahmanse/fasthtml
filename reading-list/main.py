@@ -8,7 +8,7 @@ from fasthtml.common import Style, serve
 
 from app.core.database import app
 from app import routes as _routes
-DEFAULT_PORT = 5001
+DEFAULT_PORT = int(os.environ.get("PORT", 5001))
 
 
 def _terminate_pid(pid: str) -> None:
