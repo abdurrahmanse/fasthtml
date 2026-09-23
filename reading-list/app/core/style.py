@@ -2,6 +2,8 @@ from fasthtml.common import Style
 
 css = Style(
     """
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
     :root {
         color-scheme: dark;
         --bg: #0b1117;
@@ -30,7 +32,7 @@ css = Style(
             radial-gradient(circle at bottom right, rgba(126, 215, 162, 0.12), transparent 20%),
             var(--bg);
         color: var(--ink);
-        font-family: "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+        font-family: "Rajdhani", sans-serif;
     }
     a { color: inherit; }
     .page-shell {
@@ -66,7 +68,7 @@ css = Style(
     }
     .topbar-link:hover { color: var(--ink); }
     .eyebrow, .section-label, label, .status, .book-count, .refresh-link, .stat-label, .pill, button {
-        font-family: "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+        font-family: "Rajdhani", sans-serif;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         font-size: 0.72rem;
