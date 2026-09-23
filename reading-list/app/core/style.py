@@ -40,12 +40,12 @@ css = Style(
         padding-bottom: 2rem;
     }
     .site-header {
-        padding: 2.4rem max(1.25rem, calc((100vw - 1180px) / 2)) 1rem;
+        padding: 2.4rem max(1.25rem, calc((100vw - 1440px) / 2)) 1rem;
         background: linear-gradient(180deg, rgba(13, 18, 22, 0.96), rgba(11, 17, 23, 0.85));
         border-bottom: 1px solid var(--line);
     }
     .intro {
-        max-width: 1180px;
+        max-width: 1440px;
         margin: 0 auto;
         display: grid;
         gap: 1.1rem;
@@ -55,7 +55,7 @@ css = Style(
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        max-width: 1180px;
+        max-width: 1440px;
         margin: 0 auto 1.1rem;
     }
     .topbar-link {
@@ -112,10 +112,10 @@ css = Style(
         background: rgba(255,255,255,0.02);
         color: var(--muted);
     }
-    .main-shell {
-        max-width: 1180px;
+    .main-section-container {
+        max-width: 1440px;
         margin: 0 auto;
-        padding: 2rem max(1.25rem, calc((100vw - 1180px) / 2)) 2.5rem;
+        padding: 2rem max(1.25rem, calc((100vw - 1440px) / 2)) 2.5rem;
     }
     .dashboard-shell {
         display: grid;

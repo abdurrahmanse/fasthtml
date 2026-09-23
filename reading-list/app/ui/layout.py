@@ -26,7 +26,7 @@ def layout(title_text, content_element, header_content=None):
                     cls="site-header",
                 )
             ),
-            Main(content_element, cls="main-shell"),
+            Main(content_element, cls="main-section-container"),
             Footer(P("A quiet place for the next thing worth reading."), cls="site-footer"),
             cls="page-shell",
         ),
