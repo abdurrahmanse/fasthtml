@@ -354,5 +354,13 @@ css = Style(
         }
         .button-quiet { padding-inline: 0.9rem; }
     }
+    .error-message {
+        color: #ff6b6b;
+        background: rgba(255, 107, 107, 0.1);
+        border: 1px solid rgba(255, 107, 107, 0.2);
+        padding: 0.8rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
     """
 )

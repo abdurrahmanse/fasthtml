@@ -37,8 +37,16 @@ def book_card(book):
     )
 
 
+def error_message(msg: str, **kwargs):
+    if not msg:
+        # return empty div to clear errors
+        return Div(id="form-errors", **kwargs)
+    return Div(msg, cls="error-message", id="form-errors", **kwargs)
+
+
 def book_form():
     return Form(
+        Div(id="form-errors"),
         Div(
             Label("Title", fr="title"),
             Input(id="title", name="title", placeholder="e.g. Atomic Habits", required=True),
@@ -69,6 +77,6 @@ def book_form():
         hx_post="/books",
         hx_target="#book-list",
         hx_swap="afterbegin",
-        hx_on__after_request="this.reset()",
+        hx_on__after_request="if(event.detail.successful) this.reset()",
         cls="book-form",
     )
