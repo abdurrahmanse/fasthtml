@@ -4,7 +4,7 @@ import signal
 import subprocess
 import time
 
-from fasthtml.common import Style, serve
+from fasthtml.common import serve
 
 from app.core.database import app
 from app import routes as _routes
